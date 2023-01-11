@@ -1,0 +1,5 @@
+@use 'global';
+
+.main {
+  color: global.$primary-color;
+}
