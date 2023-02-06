@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import React, { ReactElement } from 'react'
+import React, { ReactElement, useEffect } from 'react'
 import { Layout, Menu } from 'antd'
 import type { MenuProps } from 'antd'
 import {
@@ -11,6 +11,9 @@ import {
   SettingFilled,
   WalletFilled,
 } from '@ant-design/icons/lib/icons'
+import { useRouter } from 'next/router'
+import { setPathName } from '../slices/route'
+import { useDispatch } from '../hooks'
 
 const { Header, Sider, Content } = Layout
 interface Props {
@@ -18,6 +21,18 @@ interface Props {
 }
 
 const SideBar: React.FC<Props> = ({ children }) => {
+  const router = useRouter()
+
+  console.log(router)
+
+  const dispatch = useDispatch()
+
+  // console.log(router)
+
+  useEffect(() => {
+    if (router.pathname !== '/') dispatch(setPathName({ path: router.pathname }))
+  }, [dispatch, router])
+
   //-----------------------------------------------------------------------
 
   const menuItems1: MenuProps['items'] = [
@@ -66,8 +81,10 @@ const SideBar: React.FC<Props> = ({ children }) => {
     <Layout className="layout" style={{ height: '100vh' }}>
       <Sider trigger={null} theme="light">
         <div className="logo">LOGO.</div>
-        <Menu mode="inline" items={menuItems1} />
-        <Menu mode="inline" items={menuItems2} />
+        <div>
+          <Menu mode="inline" items={menuItems1} />
+          <Menu mode="inline" items={menuItems2} />
+        </div>
       </Sider>
       <Layout className="site-layout">
         <Header
