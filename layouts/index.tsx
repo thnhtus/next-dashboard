@@ -13,24 +13,35 @@ import {
 } from '@ant-design/icons/lib/icons'
 import { useRouter } from 'next/router'
 import { setPathName } from '../slices/route'
-import { useDispatch } from '../hooks'
+import { useDispatch } from 'hooks'
+import LayoutHeader from '@components/header'
+import paths from 'routers/paths'
 
-const { Header, Sider, Content } = Layout
+const { Sider, Content } = Layout
 interface Props {
   children: ReactElement
 }
 
+const findPathName = (path: string) => {
+  const find = Object.values(paths).find(
+    (item: { name: string; path: string }) => item.path === path
+  )
+
+  return find?.name ?? ''
+}
+
 const SideBar: React.FC<Props> = ({ children }) => {
   const router = useRouter()
-
-  console.log(router)
 
   const dispatch = useDispatch()
 
   // console.log(router)
 
   useEffect(() => {
-    if (router.pathname !== '/') dispatch(setPathName({ path: router.pathname }))
+    if (router.pathname !== '/') {
+      const pathName = findPathName(router.pathname)
+      dispatch(setPathName({ path: pathName }))
+    }
   }, [dispatch, router])
 
   //-----------------------------------------------------------------------
@@ -39,27 +50,27 @@ const SideBar: React.FC<Props> = ({ children }) => {
     {
       key: '1',
       icon: <HomeFilled />,
-      label: <Link href={'/dashboard'}>Dashboard</Link>,
+      label: <Link href={paths.dashboard.path}>{paths.dashboard.name}</Link>,
     },
     {
       key: '2',
       icon: <FundFilled />,
-      label: <Link href={'/transactions'}>Transactions</Link>,
+      label: <Link href={paths.transactions.path}>{paths.transactions.name}</Link>,
     },
     {
       key: '3',
       icon: <BookFilled />,
-      label: <Link href={'/invoices'}>Invoices</Link>,
+      label: <Link href={paths.invoices.path}>{paths.invoices.name}</Link>,
     },
     {
       key: '4',
       icon: <WalletFilled />,
-      label: <Link href={'/my_wallets'}>My Wallets</Link>,
+      label: <Link href={paths.my_wallets.path}>{paths.my_wallets.name}</Link>,
     },
     {
       key: '5',
       icon: <SettingFilled />,
-      label: <Link href={'/settings'}>Settings</Link>,
+      label: <Link href={paths.settings.path}>{paths.settings.name}</Link>,
     },
   ]
 
@@ -67,12 +78,12 @@ const SideBar: React.FC<Props> = ({ children }) => {
     {
       key: '6',
       icon: <QuestionCircleFilled />,
-      label: <Link href={'/help'}>Help</Link>,
+      label: <Link href={paths.help.path}>{paths.help.name}</Link>,
     },
     {
       key: '7',
       icon: <LogoutOutlined />,
-      label: <Link href={'/logout'}>Logout</Link>,
+      label: <Link href={paths.logout.path}>{paths.logout.name}</Link>,
     },
   ]
   //-----------------------------------------------------------------------
@@ -87,13 +98,7 @@ const SideBar: React.FC<Props> = ({ children }) => {
         </div>
       </Sider>
       <Layout className="site-layout">
-        <Header
-          className="site-layout-background"
-          style={{
-            padding: 0,
-            background: '#fff',
-          }}
-        ></Header>
+        <LayoutHeader />
         <Content
           className="site-layout-background"
           style={{
