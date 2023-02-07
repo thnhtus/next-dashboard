@@ -1,0 +1,43 @@
+@use 'global';
+
+.header {
+  background: global.$light-bg-color !important;
+  height: auto !important;
+  padding-inline: 40px !important;
+
+  &__content {
+    margin: 30px 0;
+    // border: 1px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__path {
+      margin: 0;
+      font-size: global.$font-lg;
+      font-weight: global.$font-weight-semi-bold;
+    }
+
+    &__playground {
+      display: flex;
+      align-items: center;
+      gap: 45px;
+
+      &__icon {
+        font-size: 24px;
+        color: global.$gray-color;
+      }
+
+      &__info {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        p {
+          margin: 0;
+          font-weight: global.$font-weight-semi-bold;
+        }
+      }
+    }
+  }
+}

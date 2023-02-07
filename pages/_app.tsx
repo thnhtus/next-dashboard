@@ -1,4 +1,4 @@
-import '../styles/globals.css'
+import '../styles/_global.scss'
 import type { AppProps } from 'next/app'
 import Layout from '../layouts'
 import 'antd/dist/reset.css'
