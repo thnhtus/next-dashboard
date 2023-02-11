@@ -1,0 +1,27 @@
+@use 'global';
+
+.dashboard {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: space-between;
+
+  &__cards {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+  }
+
+  &__statistic {
+    width: calc(70% - 40px);
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 30px;
+  }
+
+  &__wallets {
+    width: 30%;
+  }
+}

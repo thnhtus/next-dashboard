@@ -1,0 +1,42 @@
+@use 'global';
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: calc(global.$card-width + 60px);
+  // max-width: 90%;
+  min-height: global.$card-height;
+  //   border: 1px solid gray;
+  border-radius: global.$card-border;
+  background-color: global.$card-bg-color;
+
+  &__icon {
+    width: global.$card-icon-width;
+    height: global.$card-icon-width;
+    background-color: global.$card-icon-bg-color;
+    font-size: global.$font-medium;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  &__content {
+    & > * {
+      margin: 0;
+    }
+
+    &__title {
+      margin-bottom: 5px;
+      color: global.$gray-color;
+    }
+
+    &__amount {
+      font-size: global.$font-semi-lg;
+      font-weight: global.$font-weight-bold;
+      color: global.$black-color;
+    }
+  }
+}

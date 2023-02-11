@@ -16,6 +16,7 @@ import { setPathName } from '../slices/route'
 import { useDispatch } from 'hooks'
 import LayoutHeader from '@components/header'
 import paths from 'routers/paths'
+import style from './style.module.scss'
 
 const { Sider, Content } = Layout
 interface Props {
@@ -89,7 +90,7 @@ const SideBar: React.FC<Props> = ({ children }) => {
   //-----------------------------------------------------------------------
 
   return (
-    <Layout className="layout" style={{ height: '100vh' }}>
+    <Layout className={style.layout}>
       <Sider trigger={null} theme="light">
         <div className="logo">LOGO.</div>
         <div>
@@ -97,17 +98,9 @@ const SideBar: React.FC<Props> = ({ children }) => {
           <Menu mode="inline" items={menuItems2} />
         </div>
       </Sider>
-      <Layout className="site-layout">
+      <Layout>
         <LayoutHeader />
-        <Content
-          className="site-layout-background"
-          style={{
-            margin: '24px 16px',
-            padding: 24,
-          }}
-        >
-          {children}
-        </Content>
+        <Content className={style.layout__content}>{children}</Content>
       </Layout>
     </Layout>
   )

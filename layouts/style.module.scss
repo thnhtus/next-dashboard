@@ -1,0 +1,10 @@
+@use 'global';
+
+.layout {
+  height: 100vh;
+
+  &__content {
+    padding: 0 40px;
+    background-color: global.$light-bg-color;
+  }
+}

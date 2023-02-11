@@ -1,0 +1,7 @@
+@use 'global';
+
+.chart {
+  border: 1px solid global.$card-bg-color;
+  padding: 20px;
+  border-radius: 10px;
+}

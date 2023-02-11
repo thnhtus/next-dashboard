@@ -2,6 +2,7 @@
   "name": "next-dashboard",
   "version": "0.1.0",
   "private": true,
+  
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,7 +10,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ant-design/charts": "^1.4.2",
     "@ant-design/icons": "^5.0.1",
+    "@ant-design/plots": "^1.2.5",
     "@next/font": "13.1.1",
     "@reduxjs/toolkit": "^1.9.2",
     "@types/node": "18.11.18",
