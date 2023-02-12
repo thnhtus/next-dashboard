@@ -7,7 +7,7 @@ const DualAxes = dynamic(
 )
 import style from './style.module.scss'
 import { DualAxesConfig } from '@ant-design/charts'
-import { Badge, Select, SelectProps } from 'antd'
+import { Select, SelectProps } from 'antd'
 
 const chartOptions: SelectProps['options'] = [
   {
