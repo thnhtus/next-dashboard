@@ -4,4 +4,16 @@
   border: 1px solid global.$card-bg-color;
   padding: 20px;
   border-radius: 10px;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__title {
+      margin: 0;
+      font-size: global.$font-medium;
+      font-weight: global.$font-weight-semi-bold;
+    }
+  }
 }

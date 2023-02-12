@@ -7,51 +7,67 @@ const DualAxes = dynamic(
 )
 import style from './style.module.scss'
 import { DualAxesConfig } from '@ant-design/charts'
+import { Badge, Select, SelectProps } from 'antd'
+
+const chartOptions: SelectProps['options'] = [
+  {
+    label: 'Last 7 days',
+    value: 'days',
+  },
+  {
+    label: 'By months',
+    value: 'months',
+  },
+  {
+    label: 'By years',
+    value: 'years',
+  },
+]
 
 const DashboardChart: React.FC = () => {
   const data = [
     {
       year: 'Apr 14',
-      value: 4.5,
-      count: 5.2,
+      income: 4.5,
+      expenses: 5.2,
     },
     {
       year: 'Apr 15',
-      value: 6.8,
-      count: 4.7,
+      income: 6.8,
+      expenses: 4.7,
     },
     {
       year: 'Apr 16',
-      value: 5.2,
-      count: 6.7,
+      income: 5.2,
+      expenses: 6.7,
     },
     {
       year: 'Apr 17',
-      value: 6.3,
-      count: 5.5,
+      income: 6.3,
+      expenses: 5.5,
     },
     {
       year: 'Apr 18',
-      value: 3.3,
-      count: 5.3,
+      income: 3.3,
+      expenses: 5.3,
     },
     {
       year: 'Apr 19',
-      value: 4.8,
-      count: 3.6,
+      income: 4.8,
+      expenses: 3.6,
     },
     {
       year: 'Apr 20',
-      value: 3.7,
-      count: 3.1,
+      income: 3.7,
+      expenses: 3.1,
     },
   ]
   const config: DualAxesConfig = {
     data: [data, data],
     xField: 'year',
-    yField: ['value', 'count'],
+    yField: ['income', 'expenses'],
     yAxis: {
-      value: {
+      income: {
         grid: {
           line: {
             style: {
@@ -74,11 +90,11 @@ const DashboardChart: React.FC = () => {
     },
 
     meta: {
-      value: {
+      income: {
         max: 10,
         min: 0,
       },
-      count: {
+      expenses: {
         max: 10,
         min: 0,
       },
@@ -108,8 +124,9 @@ const DashboardChart: React.FC = () => {
 
   return (
     <div className={style.chart}>
-      <div>
-        <p>Working Capital</p>
+      <div className={style.chart__content}>
+        <p className={style.chart__content__title}>Working Capital</p>
+        <Select defaultValue={'days'} options={chartOptions} />
       </div>
       <DualAxes {...config} />
     </div>
