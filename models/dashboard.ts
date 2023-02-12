@@ -3,3 +3,14 @@ export interface CardItem {
   icon: JSX.Element
   amount: string
 }
+
+export type TransactionTypes = 'Mobile' | 'Entertainment' | 'Software'
+export interface Transaction {
+  name: string
+  business: string
+  type: TransactionTypes
+  amount: number
+  date: string
+}
+
+export type TableDataTypes = Transaction

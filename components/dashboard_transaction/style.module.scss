@@ -1,0 +1,65 @@
+@use 'global';
+
+.transaction {
+  padding: 20px;
+  border: 1px solid global.$card-bg-color;
+  border-radius: global.$card-border;
+
+  &__header {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    &__title {
+      margin: 0;
+      font-size: global.$font-medium;
+      font-weight: global.$font-weight-semi-bold;
+    }
+
+    &__btn {
+      border: none;
+      box-shadow: none;
+      font-weight: global.$font-weight-semi-bold;
+    }
+  }
+
+  &__table {
+    &__header {
+      color: global.$gray-color;
+    }
+
+    &__record__name {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      gap: 14px;
+
+      &__content {
+        & > * {
+          margin: 0;
+        }
+        &__name {
+          margin-bottom: 5px;
+          font-weight: global.$font-weight-medium;
+        }
+
+        &__business {
+          font-size: global.$font-semi-small;
+          color: global.$gray-color;
+        }
+      }
+    }
+
+    &__record__type,
+    &__record__date {
+      color: global.$gray-color;
+      font-weight: global.$font-weight-medium;
+    }
+
+    &__record__amount {
+      font-weight: global.$font-weight-semi-bold;
+    }
+  }
+}
