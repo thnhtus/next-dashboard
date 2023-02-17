@@ -14,3 +14,9 @@ export interface Transaction {
 }
 
 export type TableDataTypes = Transaction
+
+export interface DashboardTransfer {
+  name: string
+  dateTime: string
+  amount: number
+}

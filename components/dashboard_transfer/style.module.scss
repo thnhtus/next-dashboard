@@ -1,0 +1,25 @@
+@use 'global';
+
+.transfer {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 25px;
+
+  &__header {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+    &__title {
+      margin: 0;
+      font-size: global.$font-medium;
+      font-weight: global.$font-weight-semi-bold;
+    }
+  }
+
+  &__amount {
+    font-size: global.$font-regular;
+    font-weight: global.$font-weight-semi-bold;
+  }
+}

@@ -2,6 +2,7 @@ import { WalletFilled } from '@ant-design/icons'
 import DashboardCard from '@components/dashboard_card'
 import DashboardChart from '@components/dashboard_chart'
 import DashboardTransaction from '@components/dashboard_transaction'
+import DashboardTransfer from '@components/dashboard_transfer'
 import DashboardWallet from '@components/dashboard_wallet'
 import { CardItem } from 'models/dashboard'
 import React from 'react'
@@ -39,6 +40,7 @@ const DashboardPage: React.FC = () => {
       </div>
       <div className={style.dashboard__wallets}>
         <DashboardWallet />
+        <DashboardTransfer />
       </div>
     </div>
   )
