@@ -6,9 +6,10 @@ export interface CardItem {
 
 export type TransactionTypes = 'Mobile' | 'Entertainment' | 'Software'
 export interface Transaction {
+  id: number
   name: string
   business: string
-  type: TransactionTypes
+  type: string
   amount: number
   date: string
 }
