@@ -5,7 +5,8 @@
     "business": "Apple. Inc",
     "type": "Mobile",
     "amount": 420.84,
-    "date": "2022-4-14"
+    "date": "2022-4-14",
+    "invoiceId": "MGL0124877"
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "business": "Netflix",
     "type": "Entertainment",
     "amount": 100,
-    "date": "2022-4-5"
+    "date": "2022-4-5",
+    "invoiceId": "MGL0124585"
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "business": "Figma. Inc",
     "type": "Software",
     "amount": 244.2,
-    "date": "2022-4-2"
+    "date": "2022-4-2",
+    "invoiceId": "MGL0124124"
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "business": "Coinbase",
     "type": "Technology",
     "amount": 520.84,
-    "date": "2022-4-2"
+    "date": "2022-4-2",
+    "invoiceId": "MGL0128544"
   },
   {
     "id": 5,
@@ -37,7 +41,8 @@
     "business": "Appsumo",
     "type": "Withdraw",
     "amount": 500.1,
-    "date": "2022-3-30"
+    "date": "2022-3-30",
+    "invoiceId": "MGL0122143"
   },
   {
     "id": 6,
@@ -45,7 +50,8 @@
     "business": "Meta",
     "type": "Entertainment",
     "amount": 100,
-    "date": "2022-3-20"
+    "date": "2022-3-20",
+    "invoiceId": "MGL0124877"
   },
   {
     "id": 7,
@@ -53,7 +59,8 @@
     "business": "UIHUT",
     "type": "Payment",
     "amount": 84,
-    "date": "2022-3-24"
+    "date": "2022-3-24",
+    "invoiceId": "MGL0124244"
   },
   {
     "id": 8,
@@ -61,6 +68,7 @@
     "business": "Citi Bank",
     "type": "Withdraw",
     "amount": 400.11,
-    "date": "2022-3-10"
+    "date": "2022-3-10",
+    "invoiceId": "MGL0127749"
   }
 ]

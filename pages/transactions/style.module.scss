@@ -1,0 +1,72 @@
+@use 'global';
+
+.transaction {
+  &__header {
+    display: flex;
+
+    &__input {
+      max-width: 300px;
+      padding: 15px;
+      background: global.$card-bg-color;
+      border: none;
+
+      & > * {
+        background: global.$card-bg-color;
+      }
+
+      &__icon {
+        padding-right: 10px;
+        font-size: global.$font-regular;
+      }
+    }
+  }
+
+  &__table {
+    &__header {
+      color: global.$gray-color;
+    }
+
+    &__record__name {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      gap: 14px;
+
+      &__content {
+        & > * {
+          margin: 0;
+        }
+        &__name {
+          margin-bottom: 5px;
+          font-weight: global.$font-weight-medium;
+        }
+
+        &__business {
+          font-size: global.$font-semi-small;
+          color: global.$gray-color;
+        }
+      }
+    }
+
+    &__record__type,
+    &__record__date,
+    &__record__invoice {
+      color: global.$gray-color;
+      font-weight: global.$font-weight-medium;
+    }
+
+    &__record__amount {
+      font-weight: global.$font-weight-semi-bold;
+    }
+
+    &__record__action {
+      &__btn {
+        padding: 10px 30px;
+        height: auto;
+        background: global.$green-color;
+        color: global.$black-color;
+        font-weight: global.$font-weight-semi-bold;
+      }
+    }
+  }
+}
