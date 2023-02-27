@@ -1,0 +1,66 @@
+[
+  {
+    "invoiceId": "MGL524874",
+    "name": "Gadget Gallery LTD",
+    "date": "14 Apr 2022",
+    "orders": 20,
+    "amount": 420.84,
+    "status": "Pending"
+  },
+  {
+    "invoiceId": "MGL524250",
+    "name": "Figma Subscription",
+    "date": "12 Apr 2022",
+    "orders": 1,
+    "amount": 244.8,
+    "status": "Paid"
+  },
+  {
+    "invoiceId": "MGL524874",
+    "name": "Jack Dawson Eric",
+    "date": "12 Apr 2022",
+    "orders": 2,
+    "amount": 200.0,
+    "status": "Unpaid"
+  },
+  {
+    "invoiceId": "MGL524140",
+    "name": "UIHUT Subscription",
+    "date": "24 Mar 2022",
+    "orders": 1,
+    "amount": 84.0,
+    "status": "Paid"
+  },
+  {
+    "invoiceId": "MGL524245",
+    "name": "Citi Bank Ltd.",
+    "date": "10 Mar 2022",
+    "orders": "Withdraw",
+    "amount": 420.84,
+    "status": "Pending"
+  },
+  {
+    "invoiceId": "MGL524254",
+    "name": "Bitcoin Transaction",
+    "date": "08 Mar 2022",
+    "orders": "Technology",
+    "amount": 400.11,
+    "status": "Pending"
+  },
+  {
+    "invoiceId": "MGL524487",
+    "name": "Netflix Subscription",
+    "date": "02 Mar 2022",
+    "orders": 1,
+    "amount": 420.84,
+    "status": "Paid"
+  },
+  {
+    "invoiceId": "MGL524598",
+    "name": "Sajib Rahman",
+    "date": "01 Mar 2022",
+    "orders": "Withdraw",
+    "amount": 500.1,
+    "status": "Paid"
+  }
+]
