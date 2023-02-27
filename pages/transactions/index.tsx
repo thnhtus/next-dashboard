@@ -22,7 +22,7 @@ const TransactionsPage: React.FC = () => {
             <p className={style.transaction__table__record__name__content__name}>
               {record.name}
             </p>
-            <p className={style.transaction__table__record__name__content__business}>
+            <p className={style.transaction__table__record__name__content__sub_name}>
               {record.business}
             </p>
           </div>

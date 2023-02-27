@@ -7,6 +7,7 @@ $gray-color: #929eae;
 $semi-dark-color: #626260;
 $black-color: #1b212d;
 $green-color: #c8ee44;
+$secondary-green-color: #29a073;
 
 //font-size
 $font-semi-small: 12px;
@@ -31,3 +32,118 @@ $card-height: 105px;
 
 //border-radius
 $card-border: 10px;
+
+@function isPadding($padding) {
+  @if $padding == 0 {
+    @return auto;
+  }
+
+  @return $padding;
+}
+
+//custom btn
+@mixin primary-btn {
+  padding: 10px 30px;
+  height: auto;
+  background: $green-color;
+  color: $black-color;
+  font-weight: $font-weight-semi-bold;
+}
+
+@mixin secondary-btn($btn-color, $border, $padding) {
+  border: $border;
+  height: auto;
+  box-shadow: none;
+  color: $btn-color;
+  padding: isPadding($padding);
+}
+
+@mixin input_theme {
+  max-width: 300px;
+  padding: 15px;
+  background: $card-bg-color;
+  border: none;
+
+  & > * {
+    background: $card-bg-color;
+  }
+
+  &__icon {
+    padding-right: 10px;
+    font-size: $font-regular;
+  }
+}
+
+@mixin options_theme {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  &__create {
+    @include primary-btn();
+  }
+
+  &__filter {
+    @include secondary-btn($black-color, 1px solid #f5f5f5, 10px 30px);
+  }
+}
+
+@mixin table_theme {
+  &__header {
+    color: $gray-color;
+  }
+
+  &__record__name {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 14px;
+
+    &__content {
+      & > * {
+        margin: 0;
+      }
+      &__name {
+        margin-bottom: 5px;
+        font-weight: $font-weight-medium;
+      }
+
+      &__sub_name {
+        font-size: $font-semi-small;
+        color: $gray-color;
+      }
+    }
+  }
+
+  &__record__type,
+  &__record__date,
+  &__record__invoice,
+  &__record__type__gray {
+    color: $gray-color;
+    font-weight: $font-weight-medium;
+  }
+
+  &__record__amount,
+  &__record__type__bold {
+    font-weight: $font-weight-semi-bold;
+  }
+
+  &__record__tag {
+    padding: 8px 15px;
+    font-weight: $font-weight-medium;
+  }
+
+  &__record__action {
+    &__btn__primary {
+      @include primary-btn();
+    }
+
+    &__btn__secondary {
+      border: none;
+      box-shadow: none;
+      color: $secondary-green-color;
+
+      @include secondary-btn($secondary-green-color, 1px solid #f5f5f5, 0);
+    }
+  }
+}

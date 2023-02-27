@@ -1,0 +1,20 @@
+@use 'global';
+
+.invoice {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+
+    &__input {
+      @include global.input_theme;
+    }
+
+    &__actions {
+      @include global.options_theme;
+    }
+  }
+
+  &__table {
+    @include global.table_theme;
+  }
+}
