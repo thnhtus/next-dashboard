@@ -1,0 +1,71 @@
+@use 'global';
+
+.setting {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 40px;
+  max-width: 60%;
+
+  &__header {
+    &__title {
+      font-size: global.$font-medium;
+      font-weight: global.$font-weight-semi-bold;
+    }
+
+    &__subtitle {
+      color: global.$gray-color;
+    }
+  }
+
+  &__form {
+    &__header {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+
+      &__title,
+      &__btn {
+        font-size: global.$font-medium;
+        font-weight: global.$font-weight-semi-bold;
+      }
+
+      &__btn {
+        color: global.$secondary-green-color;
+      }
+    }
+
+    @mixin input_grp {
+      display: inline-block;
+      width: calc(50% - 20px);
+    }
+
+    &__form {
+      &__input__group {
+        @include input_grp();
+      }
+
+      &__input {
+        padding: 10px;
+      }
+
+      &__datePicker {
+        width: 100%;
+        padding: 10px;
+      }
+
+      &__btn {
+        padding: 10px 50px;
+        height: auto;
+        font-weight: global.$font-weight-semi-bold;
+        color: global.$light-bg-color;
+        background-color: global.$secondary-green-color;
+        border-color: global.$secondary-green-color;
+
+        &:hover {
+          color: global.$light-bg-color !important;
+        }
+      }
+    }
+  }
+}
