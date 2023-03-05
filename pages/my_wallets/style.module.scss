@@ -1,0 +1,296 @@
+@use 'global';
+
+@mixin list_theme {
+  &__list {
+    margin-top: 20px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 25px;
+
+    &__item {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      gap: 20px;
+
+      p {
+        margin: 0;
+      }
+
+      &__content {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+        flex: 1 1 auto;
+
+        &__title {
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: space-between;
+          gap: 10px;
+
+          p:first-child {
+            font-weight: global.$font-weight-semi-bold;
+          }
+
+          p:last-child {
+            color: global.$gray-color;
+          }
+        }
+
+        &__amount {
+          font-size: global.$font-regular;
+          font-weight: global.$font-weight-semi-bold;
+
+          span:first-child {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.wallet {
+  gap: 100px;
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__black {
+      width: 100%;
+      padding: 18px 30px;
+      min-height: 250px;
+      background: linear-gradient(45deg, #4a4a49, #20201f);
+      border-radius: 15px;
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 25px;
+
+      &__top {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 25px;
+
+        &__header {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+
+          p {
+            margin: 0;
+          }
+
+          //card logo
+          p:nth-child(1) {
+            color: global.$light-bg-color;
+            font-size: global.$font-semi-lg;
+            font-weight: global.$font-weight-bold;
+          }
+
+          //card bank's name
+          p:nth-child(2) {
+            font-size: global.$font-regular;
+            color: global.$semi-dark-color;
+
+            &::before {
+              content: '|';
+              margin: 0 7px;
+            }
+          }
+        }
+
+        &__chips {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          justify-content: space-between;
+        }
+      }
+
+      &__number {
+        margin: 0;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: 15px;
+        color: global.$light-bg-color;
+        font-size: global.$font-semi-lg;
+        font-weight: global.$font-weight-bold;
+      }
+
+      &__international {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+
+    &__white {
+      width: 90%;
+      background: linear-gradient(85deg, #95959517, #3240002d);
+      min-height: 220px;
+      position: relative;
+      bottom: 80px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      padding: 15px 20px;
+      border: 1px solid #95959517;
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 23px;
+
+      &__top {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 27px;
+
+        &__header {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+
+          p {
+            margin: 0;
+          }
+
+          //card logo
+          p:nth-child(1) {
+            color: global.$light-bg-color;
+            font-size: global.$font-semi-lg;
+            font-weight: global.$font-weight-bold;
+          }
+
+          //card bank's name
+          p:nth-child(2) {
+            font-size: global.$font-regular;
+            color: global.$light-bg-color;
+
+            &::before {
+              content: '|';
+              margin: 0 7px;
+            }
+          }
+        }
+
+        &__chips {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          justify-content: space-between;
+        }
+      }
+
+      &__number {
+        margin: 0;
+        font-size: global.$font-semi-lg;
+        font-weight: global.$font-weight-bold;
+      }
+
+      &__bottom {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+
+        p {
+          color: global.$gray-color;
+          font-size: global.$font-medium;
+          font-weight: global.$font-weight-medium;
+        }
+      }
+    }
+  }
+
+  &__balance {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 20px 0;
+    border: 1px solid global.$card-bg-color;
+    background-color: global.$card-bg-color;
+    border-radius: global.$card-border;
+    padding: 25px;
+    gap: 20px;
+
+    div {
+      flex: 1 1 150px;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-end;
+
+      label {
+        color: global.$gray-color;
+      }
+
+      p[id='balance'] {
+        font-size: global.$font-semi-lg;
+        font-weight: global.$font-weight-semi-bold;
+      }
+
+      p {
+        margin: 10px 0 0;
+        font-weight: global.$font-weight-semi-bold;
+      }
+
+      &:nth-child(2) {
+        span[role='img']:first-child {
+          color: global.$secondary-green-color;
+        }
+
+        span[role='img']:not(:first-child) {
+          color: global.$red-color;
+        }
+
+        span:nth-child(2n):not(:last-child) {
+          color: global.$secondary-green-color;
+        }
+
+        span:last-child {
+          color: global.$red-color;
+        }
+
+        span:nth-child(2n) {
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+
+  &__add__btn {
+    width: 100%;
+    margin: 20px 0;
+    height: 50px;
+    border: 1px solid global.$card-bg-color;
+    background: global.$card-bg-color;
+    font-weight: global.$font-weight-semi-bold;
+    color: global.$secondary-green-color;
+  }
+
+  &__payment {
+    &__title {
+      font-size: global.$font-medium;
+      font-weight: global.$font-weight-semi-bold;
+    }
+
+    &__all {
+      &__title {
+        font-size: global.$font-small;
+        color: global.$gray-color;
+      }
+
+      @include list_theme();
+    }
+
+    &__upcoming {
+      &__title {
+        font-size: global.$font-small;
+        color: global.$gray-color;
+      }
+
+      @include list_theme();
+    }
+  }
+}
