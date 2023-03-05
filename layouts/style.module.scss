@@ -1,10 +1,25 @@
 @use 'global';
 
 .layout {
-  height: 100vh;
+  height: 100%;
 
   &__content {
     padding: 0 40px;
     background-color: global.$light-bg-color;
+  }
+
+  &__logo {
+    font-size: 30px;
+    margin: 20px 30px;
+    font-weight: global.$font-weight-semi-bold;
+    color: global.$gray-color;
+  }
+
+  &__menu {
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    border-right: 1px solid rgb(235, 235, 235);
   }
 }
